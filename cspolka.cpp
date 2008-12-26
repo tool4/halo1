@@ -212,7 +212,7 @@ void CSpolka::Save(std::string portfel,bool end)
 	char filename[80] = "";
 	char buf[BUFSIZE] = "";
 
-	printf( "\tsave %s - %s\n", portfel.c_str(), m_name.c_str() );
+	//	printf( "\tsave %s - %s\n", portfel.c_str(), m_name.c_str() );
 
 	strcpy( buf,"mkdir -p ./portfels/");
 	system( buf );
@@ -225,7 +225,7 @@ void CSpolka::Save(std::string portfel,bool end)
 
 	strncat(filename,this->m_name.c_str(),20 );
 	strncat(filename,".txt",4 );
-	printf( "\tsave %s - %s\n", portfel.c_str(), m_name.c_str() );
+
 	plik = fopen( filename,"a" );
 	if( plik )
 	{
