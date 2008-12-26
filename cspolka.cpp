@@ -129,7 +129,7 @@ bool CSpolka::Update(std::string data)
 		memset(buf,0,BUFSIZE*2);
 		sscanf(p,"%20s",buf);
 
-		printf( "%d - %s\n", i,(char*)(buf));
+// 		printf( "%d - %s\n", i,(char*)(buf));
 		
 		switch( i )
 		{
