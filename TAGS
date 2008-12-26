@@ -1,0 +1,107 @@
+
+common.cpp,92
+void log(7,79
+void logf(22,355
+void replace(38,690
+void remove(50,873
+void cut(62,1062
+
+cportfel.cpp,785
+void log_p(8,128
+void log_p(12,181
+CPortfel::CPortfel(17,242
+CPortfel::~CPortfel(76,1339
+std::string CPortfel::GetName(81,1382
+CSpolka *CPortfel::GetSpolka(CPortfel::GetSpolka86,1440
+CSpolka *CPortfel::GetSpolki(CPortfel::GetSpolki90,1506
+CSpolka *CPortfel::GetSpolka(CPortfel::GetSpolka95,1565
+double CPortfel::GetCash(100,1640
+void CPortfel::SetCash(105,1693
+void CPortfel::List(110,1755
+void CPortfel::Print(121,1890
+void CPortfel::SetStr(136,2130
+void CPortfel::Save(140,2185
+bool CPortfel::Update_Shares(153,2350
+bool CPortfel::Update(171,2634
+void CPortfel::Delete(182,2812
+void CPortfel::Changed(198,3083
+void CPortfel::SetCashToFile(203,3137
+double CPortfel::GetCashFromFile(224,3585
+void CPortfel::EndOfDay(256,4211
+void CPortfel::StartOfDay(284,4691
+
+cspolka.cpp,428
+void log2(8,110
+CSpolka::CSpolka(13,156
+CSpolka::~CSpolka(28,335
+void CSpolka::Clear(32,364
+double  CSpolka::Buy(46,665
+double CSpolka::Sell(70,1156
+void CSpolka::Print(87,1490
+bool CSpolka::Update(106,1993
+std::string CSpolka::GetName(204,4050
+void CSpolka::Save(209,4107
+static double	m_fsrednia 256,5213
+static double	m_fMAXsrednia 257,5246
+static int		m_licznik_sredniej 258,5282
+void CSpolka::Report(261,5323
+
+cwolumen.cpp,204
+CWolumen::CWolumen(5,43
+CWolumen::~CWolumen(11,104
+void CWolumen::SetName(15,131
+char* CWolumen::GetName(20,190
+double CWolumen::Buy(26,260
+double CWolumen::Sell(31,331
+void CWolumen::Print(36,381
+
+get_nasdaq.cpp,102
+void preparsen(9,122
+double parsen(76,904
+double get_indexes(124,1717
+void print_indexes(160,2904
+
+get_wig20.cpp,190
+int comment 9,121
+int tag 10,138
+int in_script 11,151
+int in_comment 12,170
+bool search_for(15,243
+int parse_txt_to_txt(43,637
+int parse_html_to_txt(105,1760
+void get_wig20(246,3738
+
+main.cpp,324
+CPortfel *m_portfels;m_portfels10,148
+struct SIndexes indexes 11,170
+char g_buf[g_buf13,235
+char* gettime(15,257
+bool init(34,561
+void Destroy(54,842
+int update_wig20(68,999
+void save_wig20(102,1521
+void copy_wig20(117,1728
+int start_of_day(140,2217
+int end_of_day(163,2593
+void au(178,2781
+int main(198,3111
+
+cportfel.h,99
+#define AFX_CPORTFEL_H__0FD29485_E54D_4351_BB56_C7C567A8DC74__INCLUDED_2,79
+class CPortfel14,305
+
+cspolka.h,97
+#define AFX_CSPOLKA_H__0FD29485_E54D_4351_BB56_C7C567A8DC74__INCLUDED_2,78
+class CSpolka10,237
+
+cwolumen.h,20
+class CWolumen6,51
+
+main.h,76
+#define BUFSIZE 3,14
+#define WOLUMENS 5,35
+struct SIndexes{SIndexes7,55
+
+get_wig20.h,0
+
+get_nasdaq.h,0
