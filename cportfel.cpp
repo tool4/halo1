@@ -205,10 +205,10 @@ void CPortfel::SetCashToFile(double cash, const char* str)
 	char filename[BUFSIZE];
 	FILE *plik;
 
-	strncpy( filename, "./files/", BUFSIZE );
-	strncpy( filename+strlen("./files/"),
+	strncpy( filename, "./config/", BUFSIZE );
+	strncpy( filename+strlen("./config/"),
 			 m_name.c_str(),
-			 BUFSIZE - strlen("_cash.txt") -strlen("./files/") );
+			 BUFSIZE - strlen("_cash.txt") -strlen("./config/") );
 
 	strcat( filename,str);
 	strcat( filename,"_cash.txt");
@@ -229,10 +229,10 @@ double CPortfel::GetCashFromFile(char* str)
 
 	char buf[BUFSIZE];
 
-	strncpy( filename, "./files/", BUFSIZE );
-	strncpy( filename+strlen("./files/"),
+	strncpy( filename, "./config/", BUFSIZE );
+	strncpy( filename+strlen("./config/"),
 			 m_name.c_str(),
-			 BUFSIZE - strlen("_cash.txt") -strlen("./files/") );
+			 BUFSIZE - strlen("_cash.txt") -strlen("./config/") );
 	
 	strcat(filename,str);
 	strcat(filename,"_cash.txt");

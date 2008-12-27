@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <string.h>
 
 #include "main.h"
 #include "cportfel.h"
@@ -11,6 +12,7 @@ CPortfel *m_portfels;
 struct SIndexes indexes = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 
 char g_buf[BUFSIZE];
+int interval = 10;
 
 char* gettime()
 {
@@ -87,7 +89,6 @@ int update_wig20()
 					{
 						ret = 1;            // something has changed
 					}
-// 					cur->Save();
 				}
 				fclose(plik);
 			}
@@ -111,6 +112,40 @@ void save_wig20()
 	{
 		printf( "Unknown portfel: %s!\n", cur->GetName().c_str());
 	}
+}
+
+void read_config()
+{
+	char buf[BUFSIZE] = "";
+	int value = 0;
+	int line = 0;
+
+	FILE* plik = fopen( "./config/config.txt","r");
+	if( plik )
+	{
+		while( !feof( plik ) )
+		{
+			++line;
+			fgets( buf, BUFSIZE, plik );
+			if( strlen(buf) )
+			{
+				value = atoi( buf );
+				switch( line )
+				{
+				case 1:
+					interval = value; 
+					break;
+				default: break;
+				}
+			}
+		}
+		fclose(plik);
+	}
+	else
+	{
+		printf( "cannot read file config.txt\n" );
+	}
+	printf( "sleep time is %d min\n", interval );
 }
 
 void copy_wig20(struct tm *pczas)
@@ -216,10 +251,12 @@ int main()
 	{
 		logf( (char*)"files/errors.txt", 
 			  (char*)"cannot init application, missed file %s, time %s exiting...\n",
-			  "files/portfels.txt",
+			  "config/portfels.txt",
 			  gettime() );
 		return 0 ;
 	}
+
+	read_config();
 
 	get_wig20();
 	update_wig20( );
@@ -271,7 +308,7 @@ int main()
 		}
 		
 		save_wig20();
-        sleep( 60 * 10); // sleep for 10 min
+        sleep( 60 * interval ); // sleep for few min (10 or read from config)
     }
     pause();
 	Destroy();
