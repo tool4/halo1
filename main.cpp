@@ -105,7 +105,9 @@ void save_wig20()
 	if(cur->GetName() == "WIG20")
 	{
 		cur->Save();
+#ifdef DEBUG
 		printf( "WIG20 SAVED!\n");
+#endif
 	}
 	else
 	{
