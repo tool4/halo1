@@ -1,0 +1,6 @@
+git remote add origin git@github.com:tool4/halo1.git
+git push origin experimental
+git reset --hard
+git diff --cached
+git diff --cached
+git push origin experimental
