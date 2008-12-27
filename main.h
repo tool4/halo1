@@ -14,7 +14,6 @@ struct SIndexes{
 		double ftse;
 };
 
-
 //log to file files/makler_log.txt
 void log( const char* fmt, ... );
 
@@ -32,4 +31,8 @@ void cut(char *str, char a, char b);
 
 char* gettime();
 
-
+#ifdef DEBUG
+#define DPF printf
+#else
+#define DPF //printf 
+#endif

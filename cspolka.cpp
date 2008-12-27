@@ -123,13 +123,13 @@ bool CSpolka::Update(std::string data)
 	// set current 
 	m_fbiezacy = 0.0;
 
-	//	printf( "%s", p);
+	DPF( "%s", p);
 	for( int i=0; i < 15; i++ )
 	{
 		memset(buf,0,BUFSIZE*2);
 		sscanf(p,"%20s",buf);
 
-// 		printf( "%d - %s\n", i,(char*)(buf));
+		DPF( "%d - %s\n", i,(char*)(buf));
 		
 		switch( i )
 		{

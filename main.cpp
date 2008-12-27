@@ -105,15 +105,12 @@ void save_wig20()
 	if(cur->GetName() == "WIG20")
 	{
 		cur->Save();
-#ifdef DEBUG
-		printf( "WIG20 SAVED!\n");
-#endif
+		DPF( "WIG20 SAVED!\n" );
 	}
 	else
 	{
 		printf( "Unknown portfel: %s!\n", cur->GetName().c_str());
 	}
-
 }
 
 void copy_wig20(struct tm *pczas)
