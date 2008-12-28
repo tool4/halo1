@@ -56,7 +56,7 @@ double  CSpolka::Buy(double cash, double &remain)
 	m_amount += amount;
 	value = m_amount * m_fbiezacy;
 
-	log( "bought %d shares of %s at %.2f PLN, total amount: %d shares, o wartosci: %.2f PLN\n",
+	logp( "bought %d shares of %s at %.2f PLN, total amount: %d shares, o wartosci: %.2f PLN\n",
 			 amount,
 			 m_name.c_str(),
 			 m_fbiezacy,
@@ -74,7 +74,7 @@ double CSpolka::Sell(int amount)
 
 	m_amount -= amount;
 
-	log( "sold %d shares of %s at %.2f PLN, total amount: %d shares, wartosc sprzedazy: %.2f PLN\n",
+	logp( "sold %d shares of %s at %.2f PLN, total amount: %d shares, wartosc sprzedazy: %.2f PLN\n",
 			 amount,
 			 m_name.c_str(),
 			 m_fbiezacy,
@@ -86,12 +86,7 @@ double CSpolka::Sell(int amount)
 
 void CSpolka::Print( char * filename )
 {
-	printf( "%20s\t%12.2f\t%12.2f\t%12.2f\n", 
-			(char*)m_name.c_str(),
-			m_fbiezacy,
-			m_fzmiana,
-			m_fotwarcia );
- 	logf( filename,
+ 	logfp( filename,
  		  (char*)"%20s\t%12.2f\t%12.2f\t%12.2f\n", 
  		  (char*)m_name.c_str(),
  		  m_fbiezacy,

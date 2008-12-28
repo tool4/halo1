@@ -15,11 +15,8 @@ class CPortfel
 {
 	std::string config_file;
 	std::string m_name;
-	CSpolka *m_spolki;
 	CWolumen m_wolumens[ WOLUMENS ];
 	int m_count;
-	bool m_changed;
-	double m_cash;
 	int m_companies;
 	std::string m_str;
 public:
@@ -34,16 +31,12 @@ public:
 	void Save();
 	void SetStr( char* str);
 	double GetCash();
-	void  SetCashToFile(double cash,const char* str);
-	double GetCashFromFile( char* str);
 	CSpolka* GetSpolki();
 	void SetCash(double cash);
 	void EndOfDay();
 	void StartOfDay(double nasdaq);
 	bool Update_Shares(std::string str, std::string data);
 	bool Update(std::string data);
-	CSpolka *GetSpolka(int index);
-	CSpolka *GetSpolka(std::string name);
 	CPortfel* next;
 	CPortfel* prev;
 };

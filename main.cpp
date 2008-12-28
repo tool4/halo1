@@ -39,7 +39,7 @@ bool init()
 	CPortfel *prev,*cur;
 	m_portfels = NULL;
 	cur = new CPortfel("WIG20");
-	cur->GetCashFromFile((char*)"");
+	//cur->GetCashFromFile((char*)"");
 	if(m_portfels == NULL)
 	{
 		m_portfels = prev = cur;

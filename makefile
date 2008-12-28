@@ -16,7 +16,7 @@ cportfel.o:	cportfel.cpp cspolka.h cportfel.h cwolumen.h main.h
 
 cspolka.o: cspolka.cpp cwolumen.h main.h cspolka.h
 
-cwolumen.o: cwolumen.cpp cwolumen.h main.h
+cwolumen.o: cwolumen.cpp cwolumen.h main.h cspolka.h
 
 get_nasdaq.o: get_nasdaq.cpp main.h get_nasdaq.h
 

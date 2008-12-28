@@ -19,7 +19,23 @@ void log( const char* fmt, ... )
 	va_end(ap);                /* Cleanup the va_list */
 }
 
-void logf( char* filename, char* fmt, ... )
+void logp( const char* fmt, ... )
+{
+	va_list ap;
+	
+	va_start(ap, fmt);         /* Initialize the va_list */
+
+	FILE* plik = fopen( "files/makler_log.txt","a");
+	if(plik)
+	{
+		vprintf( fmt, ap );
+		vfprintf( plik, fmt, ap );
+		fclose(plik);
+	}
+	va_end(ap);                /* Cleanup the va_list */
+}
+
+void logf( const char* filename, const char* fmt, ... )
 {
 	va_list ap;
 	
@@ -28,6 +44,21 @@ void logf( char* filename, char* fmt, ... )
 	FILE* plik = fopen( filename ,"a");
 	if(plik)
 	{
+		vfprintf( plik, fmt, ap );
+		fclose(plik);
+	}
+	va_end(ap);                /* Cleanup the va_list */
+}
+void logfp( const char* filename, const char* fmt, ... )
+{
+	va_list ap;
+	
+	va_start(ap, fmt);         /* Initialize the va_list */
+
+	FILE* plik = fopen( filename ,"a");
+	if(plik)
+	{
+		vprintf( fmt, ap );
 		vfprintf( plik, fmt, ap );
 		fclose(plik);
 	}

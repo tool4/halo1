@@ -17,8 +17,14 @@ struct SIndexes{
 //log to file files/makler_log.txt
 void log( const char* fmt, ... );
 
+//log to file files/makler_log.txt and print to stdout
+void logp(const char* fmt, ... );
+
 //log to file filename
-void logf( char* filename, char* fmt, ... );
+void logf( const char* filename, const char* fmt, ... );
+
+//log to file filename and print to stdout
+void logfp( const char* filename, const char* fmt, ... );
 
 //replace each occurence of char a in string str with char b
 void replace(char *str, char a, char b);
